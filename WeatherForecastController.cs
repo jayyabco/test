@@ -18,21 +18,26 @@ namespace WebApplication1.Controllers
         {
             try
             {
-                int zero = 0;
-                int result = 100 / zero;
-                return Ok(result);
-            }
-            catch (Exception ex)
-            {
+                Exception exception = new("Test exception");
+
                 var data = new Data
                 {
                     ID = 1,
-                    StackTrace = ex.StackTrace
+                    StackTrace = exception.StackTrace
                 };
-
+                return Ok(data);
+            }
+            catch (Exception ex)
+            {
                 _logger.LogError(ex, "Error occurred while processing GetData.");
+                Exception exception = new("Test exception");
 
-                return StatusCode(500, data);
+                var data = new Data
+                {
+                    ID = 1,
+                    StackTrace = exception.StackTrace
+                };
+                return Ok(data);
             }
         }
 
