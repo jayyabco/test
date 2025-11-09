@@ -23,7 +23,7 @@ namespace WebApplication1.Controllers
                 var data = new Data
                 {
                     ID = 1,
-                    StackTrace = ""
+                    StackTrace = exception.StackTrace ?? string.Empty
                 };
                 return Ok(data);
             }
