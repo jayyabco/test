@@ -23,7 +23,7 @@ namespace WebApplication1.Controllers
                 var data = new Data
                 {
                     ID = 1,
-                    StackTrace = exception.StackTrace
+                    StackTrace = ""
                 };
                 return Ok(data);
             }
@@ -35,7 +35,7 @@ namespace WebApplication1.Controllers
                 var data = new Data
                 {
                     ID = 1,
-                    StackTrace = exception.StackTrace
+                    StackTrace = ""
                 };
                 return Ok(data);
             }
@@ -44,6 +44,7 @@ namespace WebApplication1.Controllers
         public class Data
         {
             public int ID { get; set; }
+
             public string StackTrace { get; set; } = string.Empty;
         }
     }
