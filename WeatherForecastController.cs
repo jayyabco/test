@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using System.Text.Json.Serialization;
 
 namespace WebApplication1.Controllers
 {
@@ -18,14 +19,7 @@ namespace WebApplication1.Controllers
         {
             try
             {
-                Exception exception = new("Test exception");
-
-                var data = new Data
-                {
-                    ID = 1,
-                    StackTrace = exception.StackTrace ?? string.Empty
-                };
-                return Ok(data);
+                throw new InvalidOperationException("Simulated exception for testing.");
             }
             catch (Exception ex)
             {
@@ -35,17 +29,29 @@ namespace WebApplication1.Controllers
                 var data = new Data
                 {
                     ID = 1,
-                    StackTrace = ""
+                    StackTrace = ex.StackTrace ?? string.Empty
                 };
                 return Ok(data);
             }
         }
 
+        /*public class Data
+        {
+            public int ID { get; set; }
+
+            [JsonConverter(typeof(EmptyStringJsonConverter))]
+            public string StackTrace { get; set; } = string.Empty;
+        }  */
+
         public class Data
         {
             public int ID { get; set; }
 
+            [JsonIgnore]
             public string StackTrace { get; set; } = string.Empty;
+
+            [JsonPropertyName("stackTrace")]
+            public string StackTracePublic => string.Empty;
         }
     }
 }
