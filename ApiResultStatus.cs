@@ -10,7 +10,7 @@ namespace WebApplication1
             LoggingMessage = new List<ApiLoggingItem>();
         }
 
-        public List<ApiLoggingItem> LoggingMessage { get; set; } = new List<ApiLoggingItem>();
+        public List<ApiLoggingItem> LoggingMessage { get; set; }
 
         public ApiError Error { get; set; }
     }
