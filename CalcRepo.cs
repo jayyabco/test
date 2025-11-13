@@ -14,12 +14,14 @@ namespace WebApplication1
             try
             {
                 await Task.Delay(10);
-                resp.LoggingMessage.Add(new APILoggingItem()
+
+                throw new InvalidOperationException("Simulated exception for testing.");
+                /*resp.LoggingMessage.Add(new APILoggingItem()
                 {
                     Message = $"CalcRepo PostSync a:{a} b:{b}  Sum:{a + b}",
                     Status = "200",
                     Trace = string.Empty
-                });
+                });*/
             }
             catch (Exception ex)
             {

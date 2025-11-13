@@ -6,6 +6,7 @@ namespace WebApplication1
     {
         public ApiResultStatus()
         {
+            Error = new APIError();
             LoggingMessage = new List<APILoggingItem>();
         }
 
