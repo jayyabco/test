@@ -50,8 +50,8 @@ namespace WebApplication1.Controllers
             [JsonIgnore]
             public string StackTrace { get; set; } = string.Empty;
 
-            [JsonPropertyName("stackTrace")]
-            public string StackTracePublic => string.Empty;
+            /*[JsonPropertyName("stackTrace")]
+            public string StackTracePublic => string.Empty; */
         }
     }
 }
