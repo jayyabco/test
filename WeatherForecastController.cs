@@ -32,7 +32,6 @@ namespace WebApplication1.Controllers
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error occurred while processing GetData.");
-                Exception exception = new("Test exception");
 
                 var data = new Data
                 {
@@ -48,9 +47,6 @@ namespace WebApplication1.Controllers
             public int ID { get; set; }
 
             public string StackTrace { get; set; } = string.Empty;
-
-            /*[JsonPropertyName("stackTrace")]
-            public string StackTracePublic => string.Empty; */
         }
     }
 }
