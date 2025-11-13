@@ -8,7 +8,7 @@ namespace WebApplication1
         {
         }
 
-        public static async Task<ApiResultStatus> PostSync(int a, int b)
+        public async Task<ApiResultStatus> PostSync(int a, int b)
         {
             ApiResultStatus resp = new ApiResultStatus();
             try
