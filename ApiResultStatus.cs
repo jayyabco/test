@@ -1,0 +1,16 @@
+﻿using Microsoft.OpenApi.Models;
+
+namespace WebApplication1
+{
+    public class ApiResultStatus
+    {
+        public ApiResultStatus()
+        {
+            LoggingMessage = new List<APILoggingItem>();
+        }
+
+        public List<APILoggingItem> LoggingMessage { get; set; } = new List<APILoggingItem>();
+
+        public APIError Error { get; set; }
+    }
+}
