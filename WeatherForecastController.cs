@@ -47,7 +47,6 @@ namespace WebApplication1.Controllers
         {
             public int ID { get; set; }
 
-            [JsonIgnore]
             public string StackTrace { get; set; } = string.Empty;
 
             /*[JsonPropertyName("stackTrace")]
