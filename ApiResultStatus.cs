@@ -6,12 +6,12 @@ namespace WebApplication1
     {
         public ApiResultStatus()
         {
-            Error = new APIError();
-            LoggingMessage = new List<APILoggingItem>();
+            Error = new ApiError();
+            LoggingMessage = new List<ApiLoggingItem>();
         }
 
-        public List<APILoggingItem> LoggingMessage { get; set; } = new List<APILoggingItem>();
+        public List<ApiLoggingItem> LoggingMessage { get; set; } = new List<ApiLoggingItem>();
 
-        public APIError Error { get; set; }
+        public ApiError Error { get; set; }
     }
 }
