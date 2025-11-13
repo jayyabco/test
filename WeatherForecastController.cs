@@ -14,6 +14,14 @@ namespace WebApplication1.Controllers
             _logger = logger;
         }
 
+        [HttpGet("a/APILogging")]
+        public async Task<IActionResult> APILogging()
+        {
+            CalcRepo calcRepo = new CalcRepo();
+            var result = await calcRepo.PostSync(5, 10);
+            return Ok(result);
+        }
+
         [HttpGet("a/GetData")]
         public IActionResult GetData()
         {
@@ -34,14 +42,6 @@ namespace WebApplication1.Controllers
                 return Ok(data);
             }
         }
-
-        /*public class Data
-        {
-            public int ID { get; set; }
-
-            [JsonConverter(typeof(EmptyStringJsonConverter))]
-            public string StackTrace { get; set; } = string.Empty;
-        }  */
 
         public class Data
         {
